@@ -143,4 +143,4 @@ void print_env(char **environ)
 		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}
-
+}
