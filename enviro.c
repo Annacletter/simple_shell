@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "simple_shell.h"
 
 /**
 * find_num_dir - Function prints / finds the number of Directories.
