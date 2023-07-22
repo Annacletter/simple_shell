@@ -1,4 +1,5 @@
 #include "simple_shell.h"
+#include "stdlib.h"
 
 /**
 * null_command - This function frees the buffer.
