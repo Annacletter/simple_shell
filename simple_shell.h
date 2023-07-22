@@ -1,5 +1,5 @@
-#ifndef "SIMPLE_SHELL_H"
-#define "SIMPLE_SHELL_H"
+#ifndef SIMPLE_SHELL_H
+#define SIMPLE_SHELL_H
 
 #define PATH_MAX_LENGTH 4096
 #define PATH_SEPARATOR ":"
