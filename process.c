@@ -73,3 +73,10 @@ void _path(char **commands, char *buffer, char **env, char **argv, int count)
 	free_all_dp(directories);
 	exit(EXIT_SUCCESS);
 }
+
+void end_file(char *buffer){
+ if(isatty(STDIN_FILENO))
+	 write(STDOUT_FILENO, "\n",1);
+ free(buffer);
+ exit(0);
+}
