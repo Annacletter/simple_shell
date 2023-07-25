@@ -53,3 +53,15 @@ void send_to_free(char *buffer, char **commands)
 	else
 		parent_free_commands(buffer, commands);
 }
+
+/**
+ * fork_fail - function that handles a fork fail
+ * Return: Nothing
+*/
+
+void fork_fail(void)
+{
+	perror("Error: ");
+	exit(EXIT_FAILURE);
+}
+

@@ -1,7 +1,8 @@
 #include "simple_shell.h"
+#include <signal.h>
 
 /**
-* INThandler - Function that handles signals and write the prompt
+* INThandler - handles signals and write the prompt
 *@sig: signal to handle
 *Return: Nothing (void)
 */
@@ -13,7 +14,7 @@ void INThandler(int sig)
 }
 
 /**
-* print_dollar - Script to print the dollar sign
+* print_dollar - Function to print the dollar sign
 *Return: Nothing(void)
 */
 
@@ -24,9 +25,9 @@ void print_dollar(void)
 }
 
 /**
-* main - A function to run the shell
-*@argc: number arguments to count
-*@argv: array of arguments
+* main - principal function to run the shell
+*@argc: argument count
+*@argv: argument vector
 *@env: enviroment variables
 *Return: 0 on exit, 1 if any failures happen
 */
@@ -40,24 +41,20 @@ int main(int argc, char **argv, char **env)
 	int status, count;
 	(void)argc;
 	buffer = NULL, length = 0, count = 0;
-
 	print_dollar();
 
 	while ((characters = getline(&buffer, &length, stdin)))
 	{
 		signal(SIGINT, INThandler);
-
 		if (characters == EOF)
 			end_file(buffer);
 		count++;
 		commands = array_strtok(buffer);
-
 		pid = fork();
 		if (pid == -1)
 			fork_fail();
 		if (pid == 0)
 			execute(commands, buffer, env, argv, count);
-
 		else
 		{
 			wait(&status);
@@ -66,7 +63,9 @@ int main(int argc, char **argv, char **env)
 		length = 0, buffer = NULL;
 		print_dollar();
 	}
-	if (characters == -1)
-		return (EXIT_FAILURE);
-		return (EXIT_SUCCESS);
+
+	if (characters == -1) {
+		return (EXIT_FAILURE);}
+
+	return (EXIT_SUCCESS);
 }
