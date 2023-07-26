@@ -74,9 +74,15 @@ void _path(char **commands, char *buffer, char **env, char **argv, int count)
 	exit(EXIT_SUCCESS);
 }
 
-void end_file(char *buffer){
- if(isatty(STDIN_FILENO))
-	 write(STDOUT_FILENO, "\n",1);
- free(buffer);
- exit(0);
+/**
+ * end_file - Function to end the program gracefully.
+ * @buffer: Pointer to the buffer that needs to be freed.
+ */
+
+void end_file(char *buffer)
+{
+	if	(isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "\n", 1);
+free(buffer);
+exit(0);
 }
