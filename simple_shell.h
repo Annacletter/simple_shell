@@ -17,7 +17,7 @@
 #include <sys/stat.h>
 
 void prompt(void);
-
+void *get_line(void);
 void INThandler(int sig);
 void print_dollar(void);
 
