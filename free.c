@@ -1,4 +1,5 @@
 #include "simple_shell.h"
+
 /**
  * free_all_dp - all memory and a double pointer to be freed
  * @ptr: The pointer to free

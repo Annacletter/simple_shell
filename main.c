@@ -1,5 +1,4 @@
 #include "simple_shell.h"
-#include <signal.h>
 
 /**
 * INThandler - handles signals and write the prompt
