@@ -63,6 +63,6 @@ void send_to_free(char *buffer, char **commands)
 void fork_fail(void)
 {
 	perror("Error: ");
-	exit();
+	exit(0);
 }
 
