@@ -64,8 +64,11 @@ int main(int argc, char **argv, char **env)
 		print_dollar();
 	}
 
-	if (characters == -1) {
-		return (EXIT_FAILURE);}
+	if (characters == -1)
+	{
+		return (EXIT_FAILURE);
+
+	}
 
 	return (EXIT_SUCCESS);
 }
